@@ -1,6 +1,5 @@
 <template>
   <div class="ToDoList">
-    <h1>{{title}}</h1>
     <el-row>
       <el-col :span="2">
         <el-button icon="el-icon-plus" size="small" @click="addTask">Add task</el-button></el-col>

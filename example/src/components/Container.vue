@@ -5,7 +5,9 @@
     <el-tab-pane label="List" name="first">
       <ToDoList />
     </el-tab-pane>
-    <el-tab-pane label="Calendar" name="second"></el-tab-pane>
+    <el-tab-pane label="Calendar" name="second">
+      <el-calendar v-model="date" />
+    </el-tab-pane>
     <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
     <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
   </el-tabs>
@@ -20,7 +22,8 @@ export default {
   data () {
     return {
       title: 'My ToDo List',
-      activeName: 'first'
+      activeName: 'first',
+      date: new Date()
     }
   }
   // methods: {
