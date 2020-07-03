@@ -61,7 +61,6 @@ export default {
   name: 'ToDoList',
   data () {
     return {
-      title: 'My ToDoList',
       newItem: '',
       editItem: '',
       newId: 4,
