@@ -12,6 +12,11 @@
       </li>
     </ul>
 
+    <div>
+      <input type="text" v-model="newItem">
+      <button @click="addTask">Add</button>
+    </div>
+
   </div>
 </template>
 
@@ -21,6 +26,8 @@ export default {
   data () {
     return {
       title: 'My ToDoList',
+      newItem: '',
+      newId: 4,
       items: [{id: 1, title: 'task1'}, {id: 2, title: 'task2'},
         {id: 3, title: 'task3'}
       ]
@@ -33,6 +40,10 @@ export default {
           this.items.splice(index, 1)
         }
       })
+    },
+    addTask () {
+      this.items.push({id: this.newId++, title: this.newItem})
+      this.newItem = ''
     }
   }
 
