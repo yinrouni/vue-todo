@@ -7,7 +7,7 @@
           :key="item.id"
       >
         <span>{{item.title}}</span>
-        <button>Done</button>
+        <button @click="toggleDone(item)">Done</button>
 
       </li>
     </ul>
@@ -25,7 +25,17 @@ export default {
         {id: 3, title: 'task3'}
       ]
     }
+  },
+  methods: {
+    toggleDone (i) {
+      this.items.map((item, index) => {
+        if (item.id === i.id) {
+          this.items.splice(index, 1)
+        }
+      })
+    }
   }
+
 }
 </script>
 
