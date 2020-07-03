@@ -10,10 +10,12 @@
         <el-button v-bind:type="item.done?'success':'plain'" icon="el-icon-check" size="mini" circle @click="toggleDone(item)"></el-button>
           </el-col>
           <el-col :span="14">
-        <span>{{item.title}}</span>
+        <span v-show="!item.isEditing">{{item.title}}</span>
+            <el-input v-show="item.isEditing" v-model="editItem" :placeholder="item.title" autofocus="true"
+            @change="edit(item)"/>
           </el-col>
           <el-col :span="2">
-        <el-button type="primary" icon="el-icon-edit" size="mini" circle></el-button>
+        <el-button type="primary" icon="el-icon-edit" size="mini" circle @click="item.isEditing = !item.isEditing"></el-button>
           </el-col>
           <el-col :span="2">
         <el-button type="danger" icon="el-icon-delete" size="mini" circle @click="toggleDelete(item)"></el-button>
@@ -35,9 +37,11 @@ export default {
     return {
       title: 'My ToDoList',
       newItem: '',
+      editItem: '',
       newId: 4,
-      items: [{id: 1, title: 'task1', done: false}, {id: 2, title: 'task2', done: false},
-        {id: 3, title: 'task3', done: false}
+      items: [{id: 1, title: 'task1', done: false, isEditing: false},
+        {id: 2, title: 'task2', done: false, isEditing: false},
+        {id: 3, title: 'task3', done: false, isEditing: false}
       ]
     }
   },
@@ -50,11 +54,20 @@ export default {
       })
     },
     addTask () {
-      this.items.push({id: this.newId++, title: this.newItem, done: false})
+      this.items.push({id: this.newId++, title: this.newItem, done: false, isEditing: false})
       this.newItem = ''
     },
     toggleDone (item) {
       item.done = !item.done
+    },
+    edit (i) {
+      this.items.map((item) => {
+        if (item.id === i.id) {
+          item.title = this.editItem
+          item.isEditing = false
+          this.editItem = ''
+        }
+      })
     }
   }
 
