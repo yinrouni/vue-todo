@@ -13,7 +13,7 @@
           <el-button v-bind:type="scope.row.done?'success':'plain'" icon="el-icon-check" size="mini" circle @click="toggleDone(scope.$index, scope.row)"></el-button>
         </template>
       </el-table-column>
-      <el-table-column label="Task" >
+      <el-table-column label="Task" align="center">
         <template slot-scope="scope">
           <span v-show="!scope.row.isEditing">{{scope.row.title}}</span>
           <el-input v-show="scope.row.isEditing" v-model="editItem" :placeholder="scope.row.title" autofocus="true"
@@ -21,13 +21,13 @@
         </template>
       </el-table-column>
 
-      <el-table-column label="Edit">
+      <el-table-column label="Edit" align="right">
         <template slot-scope="scope">
           <el-button type="primary" icon="el-icon-edit" size="mini" circle @click="scope.row.isEditing = !scope.row.isEditing"></el-button>
         </template>
       </el-table-column>
 
-      <el-table-column label="Delete">
+      <el-table-column label="Delete" align="right">
         <template slot-scope="scope">
           <el-button type="danger" icon="el-icon-delete" size="mini" circle @click="toggleDelete(scope.row)"></el-button>
         </template>
