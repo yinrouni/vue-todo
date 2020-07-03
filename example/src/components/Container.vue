@@ -8,7 +8,7 @@
     <el-tab-pane label="Calendar" name="second">
       <el-calendar v-model="date" />
     </el-tab-pane>
-    <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+    <el-tab-pane label="Account" name="third"></el-tab-pane>
     <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
   </el-tabs>
   </div>
