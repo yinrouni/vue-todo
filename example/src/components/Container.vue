@@ -5,8 +5,8 @@
         :title="this.$store.state.userInfo.name"
         placement="bottom"
         trigger="click">
-          <div class="list-item">My Profile</div>
-          <div class="list-item">Logout</div>
+          <div class="list-item" @click="activeName = 'third'">My Profile</div>
+          <div class="list-item" @click="logout">Logout</div>
 
         <el-avatar slot="reference" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
       </el-popover>
@@ -36,12 +36,13 @@ export default {
       activeName: 'first',
       date: new Date()
     }
+  },
+  methods: {
+    logout () {
+      this.$router.push('/login')
+      this.$store.dispatch('getUserInfo', {name: ''})
+    }
   }
-  // methods: {
-  //   handleClick (tab, event) {
-  //     console.log(tab, event)
-  //   }
-  // }
 }
 
 </script>
