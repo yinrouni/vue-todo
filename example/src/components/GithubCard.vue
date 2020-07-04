@@ -8,7 +8,7 @@
       <div class="bottom clearfix">
         <span class="time">Joined at: </span>
         <time class="time">{{this.user.created_at}}</time>
-        <div>
+        <div class="bottom clearfix">
         <span>Followers: {{this.user.followers}}</span>
         <span>Following: {{this.user.following}}</span>
         </div>
