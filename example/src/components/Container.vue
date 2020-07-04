@@ -19,7 +19,9 @@
     <el-tab-pane label="Calendar" name="second">
       <el-calendar v-model="date" />
     </el-tab-pane>
-    <el-tab-pane label="Account" name="third"></el-tab-pane>
+    <el-tab-pane label="Account" name="third">
+      <github-card :username="this.$store.state.userInfo.name" />
+    </el-tab-pane>
     <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
   </el-tabs>
   </div>
@@ -27,9 +29,10 @@
 
 <script>
 import ToDoList from './ToDoList'
+import GithubCard from './GithubCard'
 export default {
   name: 'Container',
-  components: {ToDoList},
+  components: {GithubCard, ToDoList},
   data () {
     return {
       title: 'My ToDo List',
