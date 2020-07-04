@@ -49,6 +49,7 @@ export default {
         message: 'Success!',
         type: 'success'
       })
+      this.$router.push('/index')
     },
     fail () {
       this.$message({
