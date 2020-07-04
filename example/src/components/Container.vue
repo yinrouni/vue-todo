@@ -54,7 +54,8 @@ export default {
   .right-align{
     text-align: end;
   }
-  .list-item {margin-bottom: 3px;}
+  .list-item {margin-bottom: 3px;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;}
   .list-item:hover{
     background: #e9e9e9;
     cursor: pointer;
