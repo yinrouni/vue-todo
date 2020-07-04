@@ -22,7 +22,7 @@
     <el-tab-pane label="Account" name="third">
       <github-card :username="this.$store.state.userInfo.name" />
     </el-tab-pane>
-    <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
+<!--    <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>-->
   </el-tabs>
   </div>
 </template>
