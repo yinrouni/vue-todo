@@ -49,6 +49,8 @@ export default {
         message: 'Success!',
         type: 'success'
       })
+      this.$router.push('/index')
+      this.$store.dispatch('getUserInfo', {name: this.form.username})
     },
     fail () {
       this.$message({
